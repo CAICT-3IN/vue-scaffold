@@ -1,0 +1,106 @@
+@import url("//at.alicdn.com/t/font_3431233_z3d4t8jqnch.css");
+body,
+p,
+ul,
+li,
+h1,
+h2,
+h3,
+h4 html {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.f1 {
+  flex: 1;
+}
+
+.pl10 {
+  padding-left: 10px;
+}
+
+.pl8 {
+  padding-left: 8px;
+}
+
+.ml8 {
+  margin-left: 8px;
+}
+
+.pr14 {
+  padding-right: 14px;
+}
+
+.ml12 {
+  margin-left: 12px;
+}
+
+.ml10 {
+  margin-left: 10px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+.pr10 {
+  padding-right: 10px;
+}
+
+svg:focus {
+  outline: none;
+}
+
+.red-required {
+  color: #f56c6c !important;
+}
+.el-input__inner{
+  border-radius: 0px !important;
+}
+.el-table__inner-wrapper::before{height: 0px !important;}
+.task-input > textarea{border:none !important}
+.clearfix:after {
+  /*伪元素是行内元素 正常浏览器清除浮动方法*/
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.clearfix {
+  *zoom: 1;
+  /*ie6清除浮动的方式 *号只有IE6-IE7执行，其他浏览器不执行*/
+}
+
+.c-error {
+  color: #f56c6c;
+}
+.c-pending {
+  color: #276efa;
+}
+.c-normal {
+  color: #595959;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: height 0.3s linear;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  height: 0;
+}
+.cursorPointer{cursor: pointer;}
+.el-picker-panel__footer .el-picker-panel__link-btn.el-button--text {
+  display: none;
+}
+.el-pagination .el-select .el-input{width: 70px !important;}
