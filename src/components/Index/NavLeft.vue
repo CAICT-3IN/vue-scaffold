@@ -1,50 +1,54 @@
 <template>
   <ul class="nav-box">
-   <el-menu
+    <el-menu
         class="nav-list"
         :default-active="router.currentRoute.value.name"
         text-color="#ffffff"
         background-color="transparent"
-      >
-         <div  v-for="item in navList"  :key="item.target" class="child-list">
-           <!-- 有子菜单 -->
-          <el-sub-menu :index="item.target" v-if="item.children" class="child-sub">
+    >
+      <div v-for="item in navList" :key="item.target" class="child-list">
+        <!-- 有子菜单 -->
+        <el-sub-menu :index="item.target" v-if="item.children" class="child-sub">
           <template #title>
-             <i class="icon icon-search iconfont waringIco" :class="item.icon"></i>
+            <i class="icon icon-search iconfont waringIco" :class="item.icon"></i>
             <span class="pl10">{{ item.label }}</span>
           </template>
-          <el-menu-item v-for="childItem in item.children" :key="childItem.target" :index="childItem.target"  @click="hanldeChange(childItem)">
+          <el-menu-item v-for="childItem in item.children" :key="childItem.target" :index="childItem.target"
+                        @click="hanldeChange(childItem)">
             <span class="pl10">{{ childItem.label }}</span>
           </el-menu-item>
         </el-sub-menu>
-         <!-- 无菜单 -->
-        <el-menu-item :index="item.target" v-else  @click="hanldeChange(item)">
-           <i class="icon icon-search iconfont waringIco" :class="item.icon"></i>
+        <!-- 无菜单 -->
+        <el-menu-item :index="item.target" v-else @click="hanldeChange(item)">
+          <i class="icon icon-search iconfont waringIco" :class="item.icon"></i>
           <span class="pl10">{{ item.label }}</span>
         </el-menu-item>
-         </div>
-      </el-menu>
+      </div>
+    </el-menu>
   </ul>
 </template>
 
 <script lang="ts" setup>
-import { useRoute, useRouter } from "vue-router";
-import { watch, ref, Ref } from "vue";
+import {useRoute, useRouter} from "vue-router";
+import {watch, ref, Ref} from "vue";
+
 const router = useRouter();
 const route = useRoute();
+
 interface NavItem {
   icon: string;
   label: string;
   target: string;
-  children:any;
+  children: any;
 }
+
 const navList: NavItem[] = [
 
   {
     icon: "icon-menuDetectionStatistics",
     label: "一级菜单1",
     target: "DetectionStatisticsList",
-    children:null,
+    children: null,
   },
   {
     icon: "icon-menuDetectionManagement",
@@ -56,7 +60,7 @@ const navList: NavItem[] = [
         label: "二级菜单一",
         target: "DetectionTaskList",
       },
-       {
+      {
         icon: "icon-ycdmenuJcgl",
         label: "二级菜单二",
         target: "PositiveManagementList",
@@ -66,20 +70,20 @@ const navList: NavItem[] = [
 ];
 
 const navMap: Record<string, number> = navList.reduce(
-  (result: any, item: NavItem, index) => {
-    return {
-      ...result,
-      [item.target]: index,
-    };
-  },
-  {}
+    (result: any, item: NavItem, index) => {
+      return {
+        ...result,
+        [item.target]: index,
+      };
+    },
+    {}
 );
 
 const activeIndex = getCurrentActive();
 
 function getCurrentActive(): Ref<number> {
   const activeIndex = ref<number>(0);
-  console.log("navMap",navMap)
+  console.log("navMap", navMap)
   if (navMap[route.name as string] !== undefined) {
     activeIndex.value = navMap[route.name as string];
   } else {
@@ -105,21 +109,26 @@ function hanldeChange(active: NavItem) {
 .el-menu {
   border-right-width: 0;
 }
-.el-menu-item{
-    height: 40px !important;
+
+.el-menu-item {
+  height: 40px !important;
 }
-.el-menu-item.is-active{
-   background: #ffffff !important;
+
+.el-menu-item.is-active {
+  background: #ffffff !important;
   border-radius: 6px 0px 0px 6px !important;
   color: #276efa !important;
   overflow: hidden;
 }
-.el-menu-item:hover{
- background-color: transparent;
+
+.el-menu-item:hover {
+  background-color: transparent;
 }
-.el-sub-menu .el-menu-item{
+
+.el-sub-menu .el-menu-item {
   min-width: 100px;
 }
+
 .nav-box {
   padding-left: 10px;
   box-sizing: border-box;

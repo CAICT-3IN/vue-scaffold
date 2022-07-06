@@ -4,20 +4,17 @@
   </div>
 </template>
 
-<script  lang="ts">
-import { defineComponent } from "vue";
+<script lang="ts">
+import {defineComponent} from "vue";
+
 export default defineComponent({
   name: "permissionList",
   data() {
-    return {
+    return {};
+  },
+  methods: {},
 
-    };
-  },
-  methods: {
-  },
-
-  watch: {
-  },
+  watch: {},
   created() {
   },
 });

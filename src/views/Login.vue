@@ -1,25 +1,23 @@
 <template>
   <div class="container">
-     <div @click="login">登录</div>
+    <div @click="login">登录</div>
   </div>
 </template>
 <script lang="ts">
-import { defineComponent} from "vue";
+import {defineComponent} from "vue";
+
 export default defineComponent({
   name: "permissionList",
   data() {
-    return {
-
-    };
+    return {};
   },
   methods: {
-    login(){
-       this.$router.replace("/");
+    login() {
+      this.$router.replace("/");
     },
   },
 
-  watch: {
-  },
+  watch: {},
   created() {
   },
 });

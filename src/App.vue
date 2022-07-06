@@ -1,4 +1,3 @@
-
 <template>
   <el-config-provider>
     <router-view></router-view>
@@ -19,7 +18,8 @@
   --el-color-primary: #276efa;
   --el-border-radius-base: 0
 }
-.el-popper{
+
+.el-popper {
   --el-color-primary: #276efa;
 }
 
@@ -36,16 +36,20 @@
   margin-bottom: 6px;
   text-align: left;
 }
-.ed-required{
+
+.ed-required {
   color: #F56C6C;
 }
-.el-cascader-node{
+
+.el-cascader-node {
   position: relative;
 }
-.el-cascader-node .el-radio{
+
+.el-cascader-node .el-radio {
   position: unset;
 }
-.el-cascader-node .el-radio::after{
+
+.el-cascader-node .el-radio::after {
   content: "";
   display: block;
   position: absolute;

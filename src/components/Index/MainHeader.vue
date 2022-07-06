@@ -7,21 +7,21 @@
       </div>
       <i class="line"></i>
       <div>
-          <img
-          width="30"
-          height="30"
-          v-if="!avatar"
-          class="avatar"
-          src="@/assets/icons/user-head.svg"
-          alt=""
+        <img
+            width="30"
+            height="30"
+            v-if="!avatar"
+            class="avatar"
+            src="@/assets/icons/user-head.svg"
+            alt=""
         />
         <img
-          width="30"
-          height="30"
-          v-else
-          class="avatar"
-          :src="avatar"
-          alt=""
+            width="30"
+            height="30"
+            v-else
+            class="avatar"
+            :src="avatar"
+            alt=""
         />
       </div>
     </div>
@@ -29,12 +29,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import {defineComponent} from "vue";
+
 export default defineComponent({
   name: "permissionList",
   data() {
     return {
-      avatar:false
+      avatar: false
     };
   },
   methods: {

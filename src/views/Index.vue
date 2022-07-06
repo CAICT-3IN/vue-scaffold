@@ -4,7 +4,7 @@
       <header>
         <i class="header-ico"></i>
       </header>
-      <nav-left />
+      <nav-left/>
     </nav>
     <main>
       <MainHeader></MainHeader>
@@ -21,13 +21,13 @@
 <script lang="ts" setup>
 import NavLeft from "@/components/Index/NavLeft.vue";
 import MainHeader from "../components/Index/MainHeader.vue";
-import { useRoute } from "vue-router";
-import { ref, watch } from "vue";
+import {useRoute} from "vue-router";
+import {ref, watch} from "vue";
 
 const nameMapLabel: any = {
-  DetectionStatisticsList:['一级菜单一'],
-  DetectionTaskList:['二级菜单一'],
-  PositiveManagementList:['二级菜单二'],
+  DetectionStatisticsList: ['一级菜单一'],
+  DetectionTaskList: ['二级菜单一'],
+  PositiveManagementList: ['二级菜单二'],
 };
 const route = useRoute();
 let routeName = ref<string[]>(nameMapLabel[route.name as string] || []);
